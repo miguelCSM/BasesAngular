@@ -1,0 +1,25 @@
+<!--ng g c pokemones/otro  -->
+<p>listado works!</p>
+
+<!--<div *ngIf="false">-->
+<!--<div *ngIf="heroeEliminado !== ''">-->
+
+<div *ngIf="heroeEliminado; else noBorrado">
+  <h3>
+    Heroe Borrado: <small>{{ heroeEliminado }}</small>
+  </h3>
+  <!-- <span>{{ heroeEliminado }}</span> -->
+</div>
+
+<ng-template #noBorrado>
+  <!-- Referencia local -->
+  <h3>No ha borrado nada</h3>
+</ng-template>
+
+<button (click)="borrarHeroe()">borrar</button>
+
+<ul>
+  <!-- <li>Item 1</li> -->
+  <!-- <li>{{ heroes[0] }}</li> -->
+  <li *ngFor="let heroe of heroes; let i = index">{{ i + 1 }} - {{ heroe }}</li>
+</ul>
